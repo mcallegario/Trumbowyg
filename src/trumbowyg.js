@@ -1543,10 +1543,11 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             // Build out of ModalBox, it's the mask for animations
             var $modal = $('<div/>', {
                 class: prefix + 'modal ' + prefix + 'fixed-top'
-            }).css({
+            }).prependTo($(t.$box));
+            /* .css({
                 top: t.$box.offset().top + t.$btnPane.height(),
                 zIndex: 99999
-            }).appendTo($(t.doc.body));
+            }).appendTo($(t.doc.body)); */
 
             // Click on overlay close modal by cancelling them
             t.$overlay.one('click', function () {
